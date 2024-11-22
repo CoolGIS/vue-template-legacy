@@ -5,9 +5,7 @@ import Counter from '@/components/Counter.vue'
 
 <template>
   <Counter />
-  <ul
-    class="flex gap-2.5 justify-center items-center p-2.5 m-2.5 border border-gray-300 rounded-md bg-white"
-  >
+  <ul class="m-2.5 center gap-2.5 border border-gray-300 rounded-md bg-white p-2.5">
     <li>
       <RouterLink to="/">主页</RouterLink>
     </li>

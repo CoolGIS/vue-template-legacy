@@ -5,12 +5,14 @@ import vue from '@vitejs/plugin-vue'
 import legacy from '@vitejs/plugin-legacy'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import { analyzer } from 'vite-bundle-analyzer'
+import UnoCSS from 'unocss/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   base: '/',
   plugins: [
     vue(),
+    UnoCSS(),
     legacy(),
     vueDevTools({ launchEditor: 'webstorm' }),
     analyzer({ analyzerMode: 'static' })

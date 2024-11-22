@@ -6,8 +6,8 @@ const { count } = storeToRefs(useCounterStore())
 </script>
 
 <template>
-  <div class="flex justify-center items-center h-[30vh]">
-    <button class="w-32 h-10 bg-blue-500 rounded-full text-white" @click="() => count++">
+  <div class="h-30vh center">
+    <button class="h-10 w-32 rounded-full bg-blue-500 text-white" @click="() => count++">
       count is: {{ count }}
     </button>
   </div>
