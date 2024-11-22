@@ -1,8 +1,8 @@
-import { ref } from 'vue'
 import { defineStore } from 'pinia'
+import { useCounter } from '@vueuse/core'
 
 export const useCounterStore = defineStore('counter', () => {
-  const count = ref(0)
+  const { count, inc } = useCounter(0)
 
-  return { count }
+  return { count, inc }
 })
