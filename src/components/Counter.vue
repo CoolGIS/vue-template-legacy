@@ -9,7 +9,7 @@ const { inc } = counter
 
 <template>
   <div class="h-30vh center">
-    <button class="h-10 w-32 rounded-full bg-blue-500 text-white" @click="() => inc()">
+    <button class="h-10 w-32 rounded-full bg-blue-500 text-white" @click="inc()">
       count is: {{ count }}
     </button>
   </div>
