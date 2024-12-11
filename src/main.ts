@@ -8,6 +8,8 @@ import '@/plugins/unocss'
 import { queryClient } from '@/plugins/tanstack-query'
 
 const app = createApp(App)
+// 开启性能调试
+app.config.performance = true
 
 app.use(router)
 app.use(createPinia())

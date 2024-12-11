@@ -21,5 +21,9 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  define: {
+    // 去除选项式API
+    __VUE_OPTIONS_API__: false
   }
 })
