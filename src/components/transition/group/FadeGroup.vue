@@ -22,8 +22,8 @@ interface TransitionProps {
   duration?: string
   easing?: string
   delay?: string
-  offsetX?: string
-  offsetY?: string
+  translateX?: string
+  translateY?: string
 }
 
 const {
@@ -32,8 +32,8 @@ const {
   duration = '350ms',
   easing = 'ease-in-out',
   delay = '0ms',
-  offsetX = '100%',
-  offsetY = '100%'
+  translateX = '100%',
+  translateY = '100%'
 } = defineProps<TransitionProps>()
 </script>
 
@@ -68,7 +68,7 @@ const {
 .top-reverse-enter-from,
 .top-reverse-leave-to {
   opacity: 0;
-  transform: translate3d(0, calc(v-bind(offsetY) * -1), 0);
+  transform: translate3d(0, calc(v-bind(translateY) * -1), 0);
 }
 
 .top-move,
@@ -81,11 +81,11 @@ const {
 }
 .top-enter-from {
   opacity: 0;
-  transform: translate3d(0, calc(v-bind(offsetY) * -1), 0) scale3d(0.3, 0.3, 0.3);
+  transform: translate3d(0, calc(v-bind(translateY) * -1), 0) scale3d(0.3, 0.3, 0.3);
 }
 .top-leave-to {
   opacity: 0;
-  transform: translate3d(0, v-bind(offsetY), 0) scale3d(0.3, 0.3, 0.3);
+  transform: translate3d(0, v-bind(translateY), 0) scale3d(0.3, 0.3, 0.3);
 }
 
 .bottom-reverse-move,
@@ -99,7 +99,7 @@ const {
 .bottom-reverse-enter-from,
 .bottom-reverse-leave-to {
   opacity: 0;
-  transform: translate3d(0, v-bind(offsetY), 0);
+  transform: translate3d(0, v-bind(translateY), 0);
 }
 
 .bottom-move,
@@ -112,11 +112,11 @@ const {
 }
 .bottom-enter-from {
   opacity: 0;
-  transform: translate3d(0, v-bind(offsetY), 0);
+  transform: translate3d(0, v-bind(translateY), 0);
 }
 .bottom-leave-to {
   opacity: 0;
-  transform: translate3d(0, calc(v-bind(offsetY) * -1), 0);
+  transform: translate3d(0, calc(v-bind(translateY) * -1), 0);
 }
 
 .left-reverse-move,
@@ -130,7 +130,7 @@ const {
 .left-reverse-enter-from,
 .left-reverse-leave-to {
   opacity: 0;
-  transform: translate3d(calc(v-bind(offsetX) * -1), 0, 0);
+  transform: translate3d(calc(v-bind(translateX) * -1), 0, 0);
 }
 
 .left-move,
@@ -143,11 +143,11 @@ const {
 }
 .left-enter-from {
   opacity: 0;
-  transform: translate3d(calc(v-bind(offsetX) * -1), 0, 0);
+  transform: translate3d(calc(v-bind(translateX) * -1), 0, 0);
 }
 .left-leave-to {
   opacity: 0;
-  transform: translate3d(v-bind(offsetX), 0, 0);
+  transform: translate3d(v-bind(translateX), 0, 0);
 }
 
 .right-reverse-move,
@@ -161,7 +161,7 @@ const {
 .right-reverse-enter-from,
 .right-reverse-leave-to {
   opacity: 0;
-  transform: translate3d(v-bind(offsetX), 0, 0);
+  transform: translate3d(v-bind(translateX), 0, 0);
 }
 
 .right-move,
@@ -174,11 +174,11 @@ const {
 }
 .right-enter-from {
   opacity: 0;
-  transform: translate3d(v-bind(offsetX), 0, 0);
+  transform: translate3d(v-bind(translateX), 0, 0);
 }
 .right-leave-to {
   opacity: 0;
-  transform: translate3d(calc(v-bind(offsetX) * -1), 0, 0);
+  transform: translate3d(calc(v-bind(translateX) * -1), 0, 0);
 }
 
 .top-left-reverse-move,
@@ -192,7 +192,7 @@ const {
 .top-left-reverse-enter-from,
 .top-left-reverse-leave-to {
   opacity: 0;
-  transform: translate3d(calc(v-bind(offsetX) * -1), calc(v-bind(offsetY) * -1), 0);
+  transform: translate3d(calc(v-bind(translateX) * -1), calc(v-bind(translateY) * -1), 0);
 }
 
 .top-left-move,
@@ -205,11 +205,11 @@ const {
 }
 .top-left-enter-from {
   opacity: 0;
-  transform: translate3d(calc(v-bind(offsetX) * -1), calc(v-bind(offsetY) * -1), 0);
+  transform: translate3d(calc(v-bind(translateX) * -1), calc(v-bind(translateY) * -1), 0);
 }
 .top-left-leave-to {
   opacity: 0;
-  transform: translate3d(v-bind(offsetX), v-bind(offsetY), 0);
+  transform: translate3d(v-bind(translateX), v-bind(translateY), 0);
 }
 
 .top-right-reverse-move,
@@ -223,7 +223,7 @@ const {
 .top-right-reverse-enter-from,
 .top-right-reverse-leave-to {
   opacity: 0;
-  transform: translate3d(v-bind(offsetX), calc(v-bind(offsetY) * -1), 0);
+  transform: translate3d(v-bind(translateX), calc(v-bind(translateY) * -1), 0);
 }
 
 .top-right-move,
@@ -236,14 +236,14 @@ const {
 }
 .top-right-enter-from {
   opacity: 0;
-  transform: translate3d(v-bind(offsetX), calc(v-bind(offsetY) * -1), 0);
+  transform: translate3d(v-bind(translateX), calc(v-bind(translateY) * -1), 0);
 }
 .top-right-leave-to {
   opacity: 0;
-  transform: translate3d(calc(v-bind(offsetX) * -1), v-bind(offsetY), 0);
+  transform: translate3d(calc(v-bind(translateX) * -1), v-bind(translateY), 0);
 }
 
-.bottom-left-move,
+.bottom-left-reverse-move,
 .bottom-left-reverse-enter-active,
 .bottom-left-reverse-leave-active {
   transition: all v-bind(duration) v-bind(easing) v-bind(delay);
@@ -254,7 +254,7 @@ const {
 .bottom-left-reverse-enter-from,
 .bottom-left-reverse-leave-to {
   opacity: 0;
-  transform: translate3d(calc(v-bind(offsetX) * -1), v-bind(offsetY), 0);
+  transform: translate3d(calc(v-bind(translateX) * -1), v-bind(translateY), 0);
 }
 
 .bottom-left-move,
@@ -267,11 +267,11 @@ const {
 }
 .bottom-left-enter-from {
   opacity: 0;
-  transform: translate3d(calc(v-bind(offsetX) * -1), v-bind(offsetY), 0);
+  transform: translate3d(calc(v-bind(translateX) * -1), v-bind(translateY), 0);
 }
 .bottom-left-leave-to {
   opacity: 0;
-  transform: translate3d(v-bind(offsetX), calc(v-bind(offsetY) * -1), 0);
+  transform: translate3d(v-bind(translateX), calc(v-bind(translateY) * -1), 0);
 }
 
 .bottom-right-reverse-move,
@@ -285,7 +285,7 @@ const {
 .bottom-right-reverse-enter-from,
 .bottom-right-reverse-leave-to {
   opacity: 0;
-  transform: translate3d(v-bind(offsetX), v-bind(offsetY), 0);
+  transform: translate3d(v-bind(translateX), v-bind(translateY), 0);
 }
 
 .bottom-right-move,
@@ -298,10 +298,10 @@ const {
 }
 .bottom-right-enter-from {
   opacity: 0;
-  transform: translate3d(v-bind(offsetX), v-bind(offsetY), 0);
+  transform: translate3d(v-bind(translateX), v-bind(translateY), 0);
 }
 .bottom-right-leave-to {
   opacity: 0;
-  transform: translate3d(calc(v-bind(offsetX) * -1), calc(v-bind(offsetY) * -1), 0);
+  transform: translate3d(calc(v-bind(translateX) * -1), calc(v-bind(translateY) * -1), 0);
 }
 </style>

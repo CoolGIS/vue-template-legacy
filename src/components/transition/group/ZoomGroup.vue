@@ -22,8 +22,8 @@ interface TransitionProps {
   duration?: string
   easing?: string
   delay?: string
-  offsetX?: string
-  offsetY?: string
+  translateX?: string
+  translateY?: string
   scaleX?: number
   scaleY?: number
 }
@@ -34,8 +34,8 @@ const {
   duration = '350ms',
   easing = 'ease-in-out',
   delay = '0ms',
-  offsetX = '100%',
-  offsetY = '100%',
+  translateX = '100%',
+  translateY = '100%',
   scaleX = 0.1,
   scaleY = 0.1
 } = defineProps<TransitionProps>()
@@ -73,7 +73,7 @@ const {
 .top-reverse-enter-from,
 .top-reverse-leave-to {
   opacity: 0;
-  transform: translate3d(0, calc(v-bind(offsetY) * -1), 0)
+  transform: translate3d(0, calc(v-bind(translateY) * -1), 0)
     scale3d(v-bind(scaleX), v-bind(scaleY), 0);
 }
 
@@ -87,12 +87,12 @@ const {
 }
 .top-enter-from {
   opacity: 0;
-  transform: translate3d(0, calc(v-bind(offsetY) * -1), 0)
+  transform: translate3d(0, calc(v-bind(translateY) * -1), 0)
     scale3d(v-bind(scaleX), v-bind(scaleY), 0);
 }
 .top-leave-to {
   opacity: 0;
-  transform: translate3d(0, v-bind(offsetY), 0) scale3d(v-bind(scaleX), v-bind(scaleY), 0);
+  transform: translate3d(0, v-bind(translateY), 0) scale3d(v-bind(scaleX), v-bind(scaleY), 0);
 }
 
 .bottom-reverse-move,
@@ -106,7 +106,7 @@ const {
 .bottom-reverse-enter-from,
 .bottom-reverse-leave-to {
   opacity: 0;
-  transform: translate3d(0, v-bind(offsetY), 0) scale3d(v-bind(scaleX), v-bind(scaleY), 0);
+  transform: translate3d(0, v-bind(translateY), 0) scale3d(v-bind(scaleX), v-bind(scaleY), 0);
 }
 
 .bottom-move,
@@ -119,11 +119,11 @@ const {
 }
 .bottom-enter-from {
   opacity: 0;
-  transform: translate3d(0, v-bind(offsetY), 0) scale3d(v-bind(scaleX), v-bind(scaleY), 0);
+  transform: translate3d(0, v-bind(translateY), 0) scale3d(v-bind(scaleX), v-bind(scaleY), 0);
 }
 .bottom-leave-to {
   opacity: 0;
-  transform: translate3d(0, calc(v-bind(offsetY) * -1), 0)
+  transform: translate3d(0, calc(v-bind(translateY) * -1), 0)
     scale3d(v-bind(scaleX), v-bind(scaleY), 0);
 }
 
@@ -138,7 +138,7 @@ const {
 .left-reverse-enter-from,
 .left-reverse-leave-to {
   opacity: 0;
-  transform: translate3d(calc(v-bind(offsetX) * -1), 0, 0)
+  transform: translate3d(calc(v-bind(translateX) * -1), 0, 0)
     scale3d(v-bind(scaleX), v-bind(scaleY), 0);
 }
 
@@ -152,12 +152,12 @@ const {
 }
 .left-enter-from {
   opacity: 0;
-  transform: translate3d(calc(v-bind(offsetX) * -1), 0, 0)
+  transform: translate3d(calc(v-bind(translateX) * -1), 0, 0)
     scale3d(v-bind(scaleX), v-bind(scaleY), 0);
 }
 .left-leave-to {
   opacity: 0;
-  transform: translate3d(v-bind(offsetX), 0, 0) scale3d(v-bind(scaleX), v-bind(scaleY), 0);
+  transform: translate3d(v-bind(translateX), 0, 0) scale3d(v-bind(scaleX), v-bind(scaleY), 0);
 }
 
 .right-reverse-move,
@@ -171,7 +171,7 @@ const {
 .right-reverse-enter-from,
 .right-reverse-leave-to {
   opacity: 0;
-  transform: translate3d(v-bind(offsetX), 0, 0) scale3d(v-bind(scaleX), v-bind(scaleY), 0);
+  transform: translate3d(v-bind(translateX), 0, 0) scale3d(v-bind(scaleX), v-bind(scaleY), 0);
 }
 
 .right-move,
@@ -184,11 +184,11 @@ const {
 }
 .right-enter-from {
   opacity: 0;
-  transform: translate3d(v-bind(offsetX), 0, 0) scale3d(v-bind(scaleX), v-bind(scaleY), 0);
+  transform: translate3d(v-bind(translateX), 0, 0) scale3d(v-bind(scaleX), v-bind(scaleY), 0);
 }
 .right-leave-to {
   opacity: 0;
-  transform: translate3d(calc(v-bind(offsetX) * -1), 0, 0)
+  transform: translate3d(calc(v-bind(translateX) * -1), 0, 0)
     scale3d(v-bind(scaleX), v-bind(scaleY), 0);
 }
 
@@ -203,7 +203,7 @@ const {
 .top-left-reverse-enter-from,
 .top-left-reverse-leave-to {
   opacity: 0;
-  transform: translate3d(calc(v-bind(offsetX) * -1), calc(v-bind(offsetY) * -1), 0)
+  transform: translate3d(calc(v-bind(translateX) * -1), calc(v-bind(translateY) * -1), 0)
     scale3d(v-bind(scaleX), v-bind(scaleY), 0);
 }
 
@@ -217,12 +217,12 @@ const {
 }
 .top-left-enter-from {
   opacity: 0;
-  transform: translate3d(calc(v-bind(offsetX) * -1), calc(v-bind(offsetY) * -1), 0)
+  transform: translate3d(calc(v-bind(translateX) * -1), calc(v-bind(translateY) * -1), 0)
     scale3d(v-bind(scaleX), v-bind(scaleY), 0);
 }
 .top-left-leave-to {
   opacity: 0;
-  transform: translate3d(v-bind(offsetX), v-bind(offsetY), 0)
+  transform: translate3d(v-bind(translateX), v-bind(translateY), 0)
     scale3d(v-bind(scaleX), v-bind(scaleY), 0);
 }
 
@@ -237,7 +237,7 @@ const {
 .top-right-reverse-enter-from,
 .top-right-reverse-leave-to {
   opacity: 0;
-  transform: translate3d(v-bind(offsetX), calc(v-bind(offsetY) * -1), 0)
+  transform: translate3d(v-bind(translateX), calc(v-bind(translateY) * -1), 0)
     scale3d(v-bind(scaleX), v-bind(scaleY), 0);
 }
 
@@ -251,12 +251,12 @@ const {
 }
 .top-right-enter-from {
   opacity: 0;
-  transform: translate3d(v-bind(offsetX), calc(v-bind(offsetY) * -1), 0)
+  transform: translate3d(v-bind(translateX), calc(v-bind(translateY) * -1), 0)
     scale3d(v-bind(scaleX), v-bind(scaleY), 0);
 }
 .top-right-leave-to {
   opacity: 0;
-  transform: translate3d(calc(v-bind(offsetX) * -1), v-bind(offsetY), 0)
+  transform: translate3d(calc(v-bind(translateX) * -1), v-bind(translateY), 0)
     scale3d(v-bind(scaleX), v-bind(scaleY), 0);
 }
 
@@ -271,7 +271,7 @@ const {
 .bottom-left-reverse-enter-from,
 .bottom-left-reverse-leave-to {
   opacity: 0;
-  transform: translate3d(calc(v-bind(offsetX) * -1), v-bind(offsetY), 0)
+  transform: translate3d(calc(v-bind(translateX) * -1), v-bind(translateY), 0)
     scale3d(v-bind(scaleX), v-bind(scaleY), 0);
 }
 
@@ -285,12 +285,12 @@ const {
 }
 .bottom-left-enter-from {
   opacity: 0;
-  transform: translate3d(calc(v-bind(offsetX) * -1), v-bind(offsetY), 0)
+  transform: translate3d(calc(v-bind(translateX) * -1), v-bind(translateY), 0)
     scale3d(v-bind(scaleX), v-bind(scaleY), 0);
 }
 .bottom-left-leave-to {
   opacity: 0;
-  transform: translate3d(v-bind(offsetX), calc(v-bind(offsetY) * -1), 0)
+  transform: translate3d(v-bind(translateX), calc(v-bind(translateY) * -1), 0)
     scale3d(v-bind(scaleX), v-bind(scaleY), 0);
 }
 
@@ -305,7 +305,7 @@ const {
 .bottom-right-reverse-enter-from,
 .bottom-right-reverse-leave-to {
   opacity: 0;
-  transform: translate3d(v-bind(offsetX), v-bind(offsetY), 0)
+  transform: translate3d(v-bind(translateX), v-bind(translateY), 0)
     scale3d(v-bind(scaleX), v-bind(scaleY), 0);
 }
 
@@ -319,12 +319,12 @@ const {
 }
 .bottom-right-enter-from {
   opacity: 0;
-  transform: translate3d(v-bind(offsetX), v-bind(offsetY), 0)
+  transform: translate3d(v-bind(translateX), v-bind(translateY), 0)
     scale3d(v-bind(scaleX), v-bind(scaleY), 0);
 }
 .bottom-right-leave-to {
   opacity: 0;
-  transform: translate3d(calc(v-bind(offsetX) * -1), calc(v-bind(offsetY) * -1), 0)
+  transform: translate3d(calc(v-bind(translateX) * -1), calc(v-bind(translateY) * -1), 0)
     scale3d(v-bind(scaleX), v-bind(scaleY), 0);
 }
 </style>
