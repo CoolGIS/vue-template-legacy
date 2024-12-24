@@ -13,6 +13,7 @@ export default defineConfig({
     presetAttributify(),
     presetIcons({
       collections: {
+        lucide: () => import('@iconify-json/lucide/icons.json').then((i) => i.default),
         gis: () => import('@iconify-json/gis/icons.json').then((i) => i.default)
       }
     })
