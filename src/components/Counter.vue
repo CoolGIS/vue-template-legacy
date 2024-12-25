@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
 import { useCounterStore } from '@/stores/counter'
-import Fade from '@/components/transition/Fade.vue'
+import Fade from '@/components/_transition/Fade.vue'
 
 const counter = useCounterStore()
 const { count } = storeToRefs(counter)

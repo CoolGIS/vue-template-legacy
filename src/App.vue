@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { VueQueryDevtools } from '@tanstack/vue-query-devtools'
 import Counter from '@/components/Counter.vue'
-import Zoom from '@/components/transition/Zoom.vue'
+import Zoom from '@/components/_transition/Zoom.vue'
 </script>
 
 <template>
