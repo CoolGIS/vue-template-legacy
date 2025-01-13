@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { VueQueryDevtools } from '@tanstack/vue-query-devtools'
 import Counter from '@/components/Counter.vue'
 import Zoom from '@/components/_transition/Zoom.vue'
 </script>
@@ -21,7 +20,6 @@ import Zoom from '@/components/_transition/Zoom.vue'
       </Zoom>
     </RouterView>
   </div>
-  <VueQueryDevtools />
 </template>
 
 <style scoped></style>

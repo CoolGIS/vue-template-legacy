@@ -17,7 +17,8 @@ app.config.performance = true
 app.use(router)
 app.use(createPinia())
 app.use(VueQueryPlugin, {
-  queryClient
+  queryClient,
+  enableDevtoolsV6Plugin: true
 })
 
 app.mount('#app')
