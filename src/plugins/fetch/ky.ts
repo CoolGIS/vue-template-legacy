@@ -1,4 +1,5 @@
 import ky from 'ky'
+import { isUnprotectedRoute } from '@/plugins/fetch/config.ts'
 
 const api = ky.create({
   prefixUrl: import.meta.env.VITE_API_BASE_URL,
@@ -6,8 +7,12 @@ const api = ky.create({
   hooks: {
     beforeRequest: [
       (request) => {
-        // 添加认证头或其他自定义逻辑
-        request.headers.set('Authorization', `Bearer ${localStorage.getItem('token')}`)
+        const url = new URL(request.url)
+        const schemaPath = url.pathname
+        if (!isUnprotectedRoute(schemaPath)) {
+          // 添加认证头或其他自定义逻辑
+          request.headers.set('Authorization', `Bearer ${localStorage.getItem('token')}`)
+        }
       }
     ],
     afterResponse: [
