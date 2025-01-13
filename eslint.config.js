@@ -23,5 +23,9 @@ export default [
       'vue/multi-word-component-names': 'off'
     }
   },
-  unocss
+  unocss,
+  {
+    name: 'openapi-typescript-to-ignore',
+    ignores: ['src/apis/example.d.ts']
+  }
 ]
