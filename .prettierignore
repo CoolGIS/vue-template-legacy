@@ -1,1 +1,1 @@
-src/apis/example.d.ts
+src/apis/type/**/*.d.ts

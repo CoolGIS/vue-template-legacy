@@ -26,6 +26,6 @@ export default [
   unocss,
   {
     name: 'openapi-typescript-to-ignore',
-    ignores: ['src/apis/example.d.ts']
+    ignores: ['src/apis/type/**/*.d.ts']
   }
 ]

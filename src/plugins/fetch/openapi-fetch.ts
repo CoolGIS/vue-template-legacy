@@ -1,5 +1,5 @@
 import createClient, { type Middleware } from 'openapi-fetch'
-import type { paths } from '@/apis/example'
+import type { paths } from '@/apis/type/example'
 import { getToken, isUnprotectedRoute } from '@/plugins/fetch/config.ts'
 
 const middleware: Middleware = {
