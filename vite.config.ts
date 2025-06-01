@@ -10,13 +10,7 @@ import { analyzer } from 'vite-bundle-analyzer'
 // https://vitejs.dev/config/
 export default defineConfig({
   base: '/',
-  plugins: [
-    vue(),
-    UnoCSS(),
-    legacy(),
-    vueDevTools({ launchEditor: 'webstorm' }),
-    analyzer({ analyzerMode: 'static' })
-  ],
+  plugins: [vue(), UnoCSS(), legacy(), vueDevTools(), analyzer({ analyzerMode: 'static' })],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

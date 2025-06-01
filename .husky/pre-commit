@@ -1,1 +1,2 @@
+eval "$(fnm env --use-on-cd --shell bash)"
 npx --no -- lint-staged --concurrent false
