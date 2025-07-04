@@ -9,7 +9,7 @@ import { analyzer } from 'vite-bundle-analyzer'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/',
+  base: '',
   plugins: [
     vue(),
     UnoCSS(),
