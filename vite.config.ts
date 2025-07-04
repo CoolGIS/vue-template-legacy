@@ -10,7 +10,20 @@ import { analyzer } from 'vite-bundle-analyzer'
 // https://vitejs.dev/config/
 export default defineConfig({
   base: '/',
-  plugins: [vue(), UnoCSS(), legacy(), vueDevTools(), analyzer({ analyzerMode: 'static' })],
+  plugins: [
+    vue(),
+    UnoCSS(),
+    legacy({
+      // legacy 兼容性问题配置
+      polyfills: false,
+      renderLegacyChunks: false
+      // widely-available 兼容性问题配置，需同时配置
+      // modernTargets:'edge>=79, firefox>=67, chrome>=64, safari>=12, chromeAndroid>=64, iOS>=12',
+      // modernPolyfills: true
+    }),
+    vueDevTools(),
+    analyzer({ analyzerMode: 'static' })
+  ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
