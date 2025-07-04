@@ -1,10 +1,10 @@
 import createClient, { type Middleware } from 'openapi-fetch'
 import type { paths } from '@/apis/type/example'
-import { getToken, isUnprotectedRoute } from '@/plugins/fetch/config.ts'
+import { getToken, isUnprotectedPath } from '@/plugins/fetch/config.ts'
 
 const middleware: Middleware = {
   async onRequest({ request, schemaPath }) {
-    if (isUnprotectedRoute(schemaPath)) {
+    if (isUnprotectedPath(schemaPath)) {
       return undefined
     }
     // 添加认证头或其他自定义逻辑

@@ -1,11 +1,11 @@
-const UNPROTECTED_ROUTES = ['/login', '/public']
+const UNPROTECTED_PATHS = ['/login', '/public']
 
 function getToken() {
   return localStorage.getItem('token')
 }
 
-function isUnprotectedRoute(pathname: string) {
-  return UNPROTECTED_ROUTES.includes(pathname)
+function isUnprotectedPath(pathname: string) {
+  return UNPROTECTED_PATHS.includes(pathname)
 }
 
-export { getToken, isUnprotectedRoute }
+export { getToken, isUnprotectedPath }
