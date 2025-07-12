@@ -2,6 +2,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 import UnoCSS from 'unocss/vite'
 import legacy from '@vitejs/plugin-legacy'
 import vueDevTools from 'vite-plugin-vue-devtools'
@@ -12,6 +13,7 @@ export default defineConfig({
   base: '',
   plugins: [
     vue(),
+    vueJsx(),
     UnoCSS(),
     legacy({
       // legacy 兼容性问题配置
