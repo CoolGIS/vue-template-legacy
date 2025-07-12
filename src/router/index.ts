@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Home from '@/pages/Home.vue'
+import Home from '@/pages/Home'
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -12,9 +12,9 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
-      component: () => import('@/pages/About.vue')
+      component: () => import('@/pages/About')
     },
-    { path: '/:pathMatch(.*)*', name: 'NotFound', component: () => import('@/pages/NotFound.vue') }
+    { path: '/:pathMatch(.*)*', name: 'NotFound', component: () => import('@/pages/NotFound') }
   ]
 })
 
