@@ -4,7 +4,8 @@ import {
   presetAttributify,
   presetIcons,
   transformerDirectives,
-  transformerVariantGroup
+  transformerVariantGroup,
+  transformerAttributifyJsx
 } from 'unocss'
 
 export default defineConfig({
@@ -18,7 +19,7 @@ export default defineConfig({
       }
     })
   ],
-  transformers: [transformerDirectives(), transformerVariantGroup()],
+  transformers: [transformerDirectives(), transformerVariantGroup(), transformerAttributifyJsx()],
   shortcuts: [
     {
       hstack: 'flex items-center',
