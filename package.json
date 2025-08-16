@@ -11,9 +11,11 @@
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix",
     "format": "prettier --write .",
+    "copy": "cpx \"node_modules/@geoscene/core/assets/**/*.*\" ./public/geoscene/assets",
     "prepare": "husky"
   },
   "dependencies": {
+    "@geoscene/core": "^4.29.10",
     "@tanstack/vue-query": "^5.83.0",
     "@vueuse/core": "^13.6.0",
     "ky": "^1.8.2",
@@ -35,6 +37,7 @@
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "^14.6.0",
     "@vue/tsconfig": "^0.7.0",
+    "cpx2": "^8.0.0",
     "eslint": "^9.32.0",
     "eslint-plugin-vue": "~10.3.0",
     "husky": "^9.1.7",

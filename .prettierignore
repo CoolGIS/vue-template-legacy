@@ -1,1 +1,2 @@
 src/apis/type/**/*.d.ts
+public/geoscene/**

@@ -8,6 +8,7 @@ import App from './App'
 import router from './router'
 
 import { queryClient } from '@/plugins/tanstack-query'
+import '@/plugins/geoscene'
 
 const app = createApp(App)
 // 开启性能调试
