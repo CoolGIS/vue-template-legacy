@@ -8,7 +8,7 @@ export default defineComponent(
     return () => (
       <>
         <Counter />
-        <ul class="m-2.5 center gap-2.5 border border-gray-300 rounded-md bg-white p-2.5">
+        <ul class="center m-2.5 gap-2.5 rounded-md border border-gray-300 bg-white p-2.5">
           <li>
             <RouterLink to="/">主页</RouterLink>
           </li>
