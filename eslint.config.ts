@@ -2,7 +2,6 @@ import { globalIgnores } from 'eslint/config'
 import { defineConfigWithVueTs, vueTsConfigs } from '@vue/eslint-config-typescript'
 import pluginVue from 'eslint-plugin-vue'
 import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
-import unocss from '@unocss/eslint-config/flat'
 
 export default defineConfigWithVueTs(
   {
@@ -21,7 +20,6 @@ export default defineConfigWithVueTs(
       'vue/multi-word-component-names': 'off'
     }
   },
-  unocss,
   {
     name: 'openapi-typescript-to-ignore',
     ignores: ['src/apis/type/**/*.d.ts']

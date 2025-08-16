@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "@tanstack/vue-query": "^5.83.0",
-    "@unocss/reset": "^66.3.3",
     "@vueuse/core": "^13.6.0",
     "ky": "^1.8.2",
     "lodash-es": "^4.17.21",
@@ -27,12 +26,9 @@
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
-    "@iconify-json/gis": "^1.2.3",
-    "@iconify-json/lucide": "^1.2.58",
     "@rushstack/eslint-patch": "^1.12.0",
     "@tsconfig/node22": "^22.0.2",
     "@types/node": "^22.16.5",
-    "@unocss/eslint-config": "^66.3.3",
     "@vitejs/plugin-legacy": "^7.1.0",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vitejs/plugin-vue-jsx": "^5.0.1",
@@ -51,7 +47,6 @@
     "prettier": "^3.6.2",
     "terser": "^5.43.1",
     "typescript": "~5.8.3",
-    "unocss": "^66.3.3",
     "vite": "^7.0.6",
     "vite-bundle-analyzer": "^1.1.0",
     "vite-plugin-vue-devtools": "^8.0.0",
