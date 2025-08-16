@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { markRaw, ref, type Raw } from 'vue'
-import MapView from '@geoscene/core/views/SceneView'
+import MapView from '@geoscene/core/views/MapView'
 import Map from '@geoscene/core/Map'
 
 export const useGeosceneStore = defineStore('geoscene', () => {
