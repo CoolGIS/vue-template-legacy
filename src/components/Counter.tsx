@@ -10,7 +10,7 @@ export default defineComponent(
     const { inc } = counter
 
     return () => (
-      <div class="h-30vh center">
+      <div class="center h-[30vh]">
         <button class="h-10 w-32 rounded-full bg-blue-500 text-white" onClick={() => inc()}>
           count is:&nbsp;
           <Fade mode="out-in">
