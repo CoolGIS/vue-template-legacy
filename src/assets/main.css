@@ -1,21 +1,3 @@
-@tailwind base;
-@layer base {
-  html {
-    font-size: calc(100vw / 120);
-  }
+html {
+  font-size: calc(100vw / 120);
 }
-
-@tailwind components;
-@layer components {
-  .hstack {
-    @apply flex items-center;
-  }
-  .vstack {
-    @apply flex flex-col items-center;
-  }
-  .center {
-    @apply flex items-center justify-center;
-  }
-}
-
-@tailwind utilities;
