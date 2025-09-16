@@ -24,6 +24,8 @@ export default defineConfig({
   // Global styles
   globalCss,
 
+  strictPropertyValues: true,
+
   // Generates JSX utilities with options of React, Preact, Qwik, Solid, Vue
   jsxFramework: 'vue',
 
