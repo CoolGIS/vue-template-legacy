@@ -30,3 +30,7 @@ coverage
 *.tsbuildinfo
 
 public/geoscene/assets
+
+## Panda
+styled-system
+styled-system-studio

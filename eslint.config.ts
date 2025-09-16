@@ -25,6 +25,10 @@ export default defineConfigWithVueTs(
     ignores: ['src/apis/type/**/*.d.ts']
   },
   {
+    name: 'panda-to-ignore',
+    ignores: ['styled-system/**']
+  },
+  {
     name: 'geoscene-assets-to-ignore',
     ignores: ['public/geoscene/**']
   }

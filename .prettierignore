@@ -1,2 +1,3 @@
 src/apis/type/**/*.d.ts
 public/geoscene/**
+styled-system/**
