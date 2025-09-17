@@ -11,8 +11,9 @@
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix",
     "format": "prettier --write .",
-    "copy": "cpx \"node_modules/@geoscene/core/assets/**/*.*\" ./public/geoscene/assets",
-    "prepare": "husky"
+    "husky:install": "husky",
+    "copy:geoscene-assets": "cpx \"node_modules/@geoscene/core/assets/**/*.*\" ./public/geoscene/assets",
+    "prepare": "run-s husky:install copy:geoscene-assets"
   },
   "dependencies": {
     "@geoscene/core": "^4.29.10",
