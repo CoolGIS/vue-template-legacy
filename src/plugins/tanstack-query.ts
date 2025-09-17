@@ -34,4 +34,9 @@ const queryClient = new QueryClient({
   mutationCache
 })
 
-export { queryClient }
+const vueQueryOption = {
+  queryClient,
+  enableDevtoolsV6Plugin: true
+}
+
+export default vueQueryOption
