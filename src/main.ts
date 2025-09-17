@@ -7,7 +7,7 @@ import { VueQueryPlugin } from '@tanstack/vue-query'
 import App from './App'
 import router from './router'
 
-import { queryClient } from '@/plugins/tanstack-query'
+import vueQueryOption from '@/plugins/tanstack-query'
 import '@/plugins/geoscene'
 
 const app = createApp(App)
@@ -16,9 +16,6 @@ app.config.performance = true
 
 app.use(router)
 app.use(createPinia())
-app.use(VueQueryPlugin, {
-  queryClient,
-  enableDevtoolsV6Plugin: true
-})
+app.use(VueQueryPlugin, vueQueryOption)
 
 app.mount('#app')
