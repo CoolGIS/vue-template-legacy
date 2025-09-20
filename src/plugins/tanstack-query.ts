@@ -19,10 +19,7 @@ const queryCache = new QueryCache({
 const mutationCache = new MutationCache({
   onSuccess(data, variables, context, mutation) {
     // 全局成功处理
-    const message =
-      typeof mutation.options.meta?.successMessage === 'string'
-        ? mutation.options.meta.successMessage
-        : '操作成功！'
+    const message = mutation.options.meta?.successMessage ?? '操作成功！'
     console.log('[Mutation Success]', message)
     // 触发一个全局的 toast/notification
   },
@@ -37,11 +34,7 @@ const mutationCache = new MutationCache({
     }
 
     // 从 meta 获取自定义消息，否则使用通用消息
-    const message =
-      typeof mutation.options.meta?.errorMessage === 'string'
-        ? mutation.options.meta.errorMessage
-        : '操作失败，请稍后重试'
-
+    const message = mutation.options.meta?.errorMessage ?? '操作失败，请稍后重试'
     console.error('[Mutation Error]', message)
     // 触发一个全局的 toast/notification
   }
@@ -49,7 +42,12 @@ const mutationCache = new MutationCache({
 
 const queryClient = new QueryClient({
   queryCache,
-  mutationCache
+  mutationCache,
+  defaultOptions: {
+    queries: {
+      retry: false
+    }
+  }
 })
 
 const vueQueryOption = {
