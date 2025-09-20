@@ -28,6 +28,9 @@ const middleware: Middleware = {
   }
 }
 
+/**
+ * @deprecated 与 zod 配合不佳，后续使用 Orval 构建新流程
+ */
 const client = createClient<paths>({ baseUrl: import.meta.env.VITE_API_BASE_URL })
 
 client.use(middleware)
