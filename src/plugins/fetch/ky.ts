@@ -1,6 +1,6 @@
 import ky from 'ky'
 import { getToken, isUnprotectedPath } from '@/plugins/fetch/config.ts'
-import { ZodType, ZodError } from 'zod'
+import { ZodType } from 'zod'
 
 // 扩展 ky 的类型，识别自定义 context
 declare module 'ky' {
@@ -9,14 +9,6 @@ declare module 'ky' {
   }
   interface NormalizedOptions {
     zodSchema?: ZodType
-  }
-}
-
-// 定义自定义验证错误
-export class ZodValidationError extends Error {
-  constructor(message: string, options?: { cause: Error }) {
-    super(message, options)
-    this.name = 'ZodValidationError'
   }
 }
 
@@ -35,26 +27,13 @@ const api = ky.create({
       }
     ],
     afterResponse: [
-      async (_request, options, response) => {
+      async (_request, { zodSchema }, response) => {
         // 数据校验
-        const schema = options.zodSchema
-
-        if (!schema) {
-          return response
+        if (zodSchema) {
+          const data = await response.clone().json()
+          zodSchema.parse(data)
         }
-
-        const clonedResponse = response.clone()
-        try {
-          const data = await clonedResponse.json()
-          schema.parse(data)
-          return response
-        } catch (error) {
-          if (error instanceof ZodError) {
-            throw new ZodValidationError('数据校验失败', { cause: error })
-          }
-          // 重新抛出其他错误（如 JSON 解析失败）
-          throw error
-        }
+        return response
       }
     ]
   }

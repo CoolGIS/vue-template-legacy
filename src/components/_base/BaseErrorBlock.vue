@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { ZodValidationError } from '@/plugins/fetch/ky'
 import { HTTPError } from 'ky'
+import { ZodError } from 'zod'
 
 const {
   error,
@@ -28,7 +28,7 @@ const displayInfo = computed(() => {
     return { title: '未知错误', message: '发生了一个未知错误。' }
   }
 
-  if (error instanceof ZodValidationError) {
+  if (error instanceof ZodError) {
     return { title: '系统异常', message: '获取的数据格式不正确，请稍后重试。' }
   }
 
