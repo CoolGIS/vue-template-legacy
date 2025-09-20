@@ -1,16 +1,5 @@
 import ky from 'ky'
 import { getToken, isUnprotectedPath } from '@/plugins/fetch/config.ts'
-import { ZodType } from 'zod'
-
-// 扩展 ky 的类型，识别自定义 context
-declare module 'ky' {
-  interface Options {
-    zodSchema?: ZodType
-  }
-  interface NormalizedOptions {
-    zodSchema?: ZodType
-  }
-}
 
 const api = ky.create({
   prefixUrl: import.meta.env.VITE_API_BASE_URL,
