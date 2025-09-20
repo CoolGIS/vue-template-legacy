@@ -24,9 +24,14 @@ export const useGeosceneStore = defineStore('geoscene', () => {
     isInit.value = true
   }
 
+  const destroy = () => {
+    view.value?.destroy()
+  }
+
   return {
     view,
     isInit,
-    init
+    init,
+    destroy
   }
 })
