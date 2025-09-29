@@ -45,7 +45,8 @@ const queryClient = new QueryClient({
   mutationCache,
   defaultOptions: {
     queries: {
-      retry: false
+      retry: false,
+      refetchOnWindowFocus: false
     }
   }
 })
