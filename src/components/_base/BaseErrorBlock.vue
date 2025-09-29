@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { HTTPError } from 'ky'
 import { ZodError } from 'zod'
+import { APIError } from '@/plugins/fetch/ky'
 
 const {
   error,
@@ -45,6 +46,10 @@ const displayInfo = computed(() => {
       default:
         return { title: '请求失败', message: '您的请求未能成功处理，请稍后重试。' }
     }
+  }
+
+  if (error instanceof APIError) {
+    return { title: '请求失败', message: error.message }
   }
 
   return { title: '网络错误', message: '无法连接到服务器，请检查您的网络连接并重试。' }
