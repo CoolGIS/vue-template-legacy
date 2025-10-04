@@ -1,5 +1,6 @@
 import { QueryCache, MutationCache, QueryClient } from '@tanstack/vue-query'
 import { HTTPError } from 'ky'
+// import { APIError } from './fetch/ky'
 
 const queryCache = new QueryCache({
   onSuccess() {
@@ -13,13 +14,17 @@ const queryCache = new QueryCache({
     if (error instanceof HTTPError && error.response.status === 401) {
       // 处理401未授权情况
     }
+
+    // 非标准接口处理401未授权情况
+    /* if (error instanceof APIError && error.code === 401) {
+    } */
   }
 })
 
 const mutationCache = new MutationCache({
   onSuccess(data, variables, context, mutation) {
     // 全局成功处理
-    const message = mutation.options.meta?.successMessage ?? '操作成功！'
+    const message = mutation.options.meta?.successMessage ?? '操作成功'
     console.log('[Mutation Success]', message)
     // 触发一个全局的 toast/notification
   },
@@ -32,6 +37,10 @@ const mutationCache = new MutationCache({
       // 处理401未授权情况
       return
     }
+
+    // 非标准接口处理401未授权情况
+    /* if (error instanceof APIError && error.code === 401) {
+    } */
 
     // 从 meta 获取自定义消息，否则使用通用消息
     const message = mutation.options.meta?.errorMessage ?? '操作失败，请稍后重试'
