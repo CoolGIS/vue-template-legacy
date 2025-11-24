@@ -4,7 +4,7 @@ const globalCss = defineGlobalStyles({
   html: {
     fontFamily:
       '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji',
-    fontSize: 'calc(100vw / 120)'
+    fontSize: 'max(12px, calc(100vw / 120))'
   }
 })
 
