@@ -1,4 +1,8 @@
 {
-  "*.{ts,mts,tsx,vue}": "eslint --fix",
-  "*": "prettier --write --ignore-unknown"
+  "*.{js,jsx,ts,tsx,vue,mts}": [
+    "oxlint --fix -D correctness",
+    "eslint --fix --cache",
+    "prettier --write"
+  ],
+  "*.{json,md,css,html,yaml,yml}": ["prettier --write"]
 }
