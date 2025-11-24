@@ -29,13 +29,11 @@ export default defineComponent(
         </ul>
         <Box overflow={'hidden'}>
           <RouterView>
-            {{
-              default: ({ Component }: { Component: VNode }) => (
-                <Zoom direction="left" mode="out-in">
-                  {Component}
-                </Zoom>
-              )
-            }}
+            {({ Component }: { Component: VNode }) => (
+              <Zoom direction="left" mode="out-in">
+                {Component}
+              </Zoom>
+            )}
           </RouterView>
         </Box>
       </>
