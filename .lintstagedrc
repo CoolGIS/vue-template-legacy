@@ -1,8 +1,8 @@
 {
-  "*.{js,jsx,ts,tsx,vue,mts}": [
+  "*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,vue}": [
     "oxlint --fix -D correctness",
     "eslint --fix --cache",
     "prettier --write"
   ],
-  "*.{json,md,css,html,yaml,yml}": ["prettier --write"]
+  "*.{json,md,css,html}": ["prettier --write"]
 }
