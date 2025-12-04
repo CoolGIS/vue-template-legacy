@@ -3,6 +3,8 @@ export default {
     'tailwindcss/nesting': {},
     tailwindcss: {},
     'postcss-pxtorem': {
+      rootValue: 16,
+      minPixelValue: 2,
       propList: ['*']
     },
     'postcss-preset-env': {
