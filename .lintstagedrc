@@ -2,7 +2,7 @@
   "*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,vue}": [
     "oxlint --fix -D correctness",
     "eslint --fix --cache",
-    "prettier --write"
+    "prettier --write --experimental-cli"
   ],
-  "*.{json,md,css,html}": ["prettier --write"]
+  "*.{json,md,css,html}": ["prettier --write --experimental-cli"]
 }
