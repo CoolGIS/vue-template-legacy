@@ -15,7 +15,7 @@
     "lint:oxlint": "oxlint . --fix -D correctness",
     "lint:eslint": "eslint . --fix --cache",
     "lint": "run-s lint:*",
-    "format": "prettier --write .",
+    "format": "prettier --write --experimental-cli .",
     "husky:install": "husky",
     "panda:codegen": "panda codegen",
     "copy:geoscene-assets": "cpx \"node_modules/@geoscene/core/assets/**/*.*\" ./public/geoscene/assets",
