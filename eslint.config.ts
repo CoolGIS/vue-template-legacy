@@ -23,7 +23,7 @@ export default defineConfigWithVueTs(
     }
   },
   {
-    name: 'geoscene-assets-to-ignore',
-    ignores: ['public/geoscene/**']
+    name: 'arcgis-assets-to-ignore',
+    ignores: ['public/arcgis/**']
   }
 )

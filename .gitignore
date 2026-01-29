@@ -35,8 +35,8 @@ coverage
 # Vitest
 __screenshots__/
 
-# Geoscene
-public/geoscene/assets
+# arcgis
+public/arcgis/assets
 
 # AI
 CLAUDE.md

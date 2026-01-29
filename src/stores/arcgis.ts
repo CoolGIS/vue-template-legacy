@@ -1,15 +1,15 @@
 import { defineStore } from 'pinia'
 import { markRaw, ref, type Raw } from 'vue'
-import MapView from '@geoscene/core/views/MapView'
-import Map from '@geoscene/core/Map'
+import MapView from '@arcgis/core/views/MapView'
+import Map from '@arcgis/core/Map'
 
-export const useGeosceneStore = defineStore('geoscene', () => {
+export const useArcGISStore = defineStore('arcgis', () => {
   const view = ref<Raw<MapView>>()
   const isInit = ref(false)
 
   const init = async (container: string | HTMLDivElement) => {
     const map = new Map({
-      basemap: 'tianditu-vector'
+      basemap: 'osm'
     })
     view.value = markRaw(
       new MapView({

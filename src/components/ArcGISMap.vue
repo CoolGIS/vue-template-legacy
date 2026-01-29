@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, useTemplateRef } from 'vue'
-import { useGeosceneStore } from '@/stores/geoscene'
+import { useArcGISStore } from '@/stores/arcgis'
 
 const mapRef = useTemplateRef<HTMLDivElement>('map')
-const geosceneStore = useGeosceneStore()
-const { init, destroy } = geosceneStore
+const arcgisStore = useArcGISStore()
+const { init, destroy } = arcgisStore
 
 onMounted(() => {
   if (mapRef.value) {

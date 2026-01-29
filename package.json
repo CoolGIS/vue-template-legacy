@@ -17,11 +17,11 @@
     "lint": "run-s lint:*",
     "format": "prettier --write --experimental-cli .",
     "husky:install": "husky",
-    "copy:geoscene-assets": "cpx \"node_modules/@geoscene/core/assets/**/*.*\" ./public/geoscene/assets",
-    "prepare": "run-s husky:install copy:geoscene-assets"
+    "copy:arcgis-assets": "cpx \"node_modules/@arcgis/core/assets/**/*.*\" ./public/arcgis/assets",
+    "prepare": "run-s husky:install copy:arcgis-assets"
   },
   "dependencies": {
-    "@geoscene/core": "^4.29.11",
+    "@arcgis/core": "^4.34.8",
     "@tanstack/vue-query": "^5.92.0",
     "@vueuse/core": "^14.1.0",
     "ky": "^1.14.0",

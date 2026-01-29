@@ -8,7 +8,7 @@ import App from './App.vue'
 import router from './router'
 
 import vueQueryOption from '@/plugins/tanstack-query'
-import '@/plugins/geoscene'
+import '@/plugins/arcgis'
 
 const app = createApp(App)
 // 开启性能调试
