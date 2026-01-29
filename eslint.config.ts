@@ -23,10 +23,6 @@ export default defineConfigWithVueTs(
     }
   },
   {
-    name: 'openapi-typescript-to-ignore',
-    ignores: ['src/apis/type/**/*.d.ts']
-  },
-  {
     name: 'geoscene-assets-to-ignore',
     ignores: ['public/geoscene/**']
   }
