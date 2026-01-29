@@ -35,5 +35,11 @@ coverage
 # Vitest
 __screenshots__/
 
-## Geoscene
+# Geoscene
 public/geoscene/assets
+
+# AI
+CLAUDE.md
+.claude
+.serena
+.mcp.json
