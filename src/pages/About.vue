@@ -1,0 +1,3 @@
+<template>
+  <div class="center h-[50vh] text-3xl font-bold text-green-500">关于</div>
+</template>
