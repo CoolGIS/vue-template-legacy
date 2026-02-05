@@ -18,5 +18,12 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div ref="map" class="size-full"></div>
+  <div ref="map" class="map-container"></div>
 </template>
+
+<style scoped>
+.map-container {
+  width: 100%;
+  height: 100%;
+}
+</style>
