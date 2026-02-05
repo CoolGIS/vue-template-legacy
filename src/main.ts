@@ -3,7 +3,6 @@ import '@/assets/main.css'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import { VueQueryPlugin } from '@tanstack/vue-query'
-// import ElementPlus from 'element-plus'
 
 import App from './App.vue'
 import router from './router'
@@ -19,6 +18,5 @@ app.config.performance = true
 app.use(router)
 app.use(createPinia())
 app.use(VueQueryPlugin, vueQueryOption)
-// app.use(ElementPlus, elementPlusOption)
 
 app.mount('#app')
