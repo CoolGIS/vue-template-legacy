@@ -3,12 +3,14 @@ import '@/assets/main.css'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import { VueQueryPlugin } from '@tanstack/vue-query'
+// import ElementPlus from 'element-plus'
 
 import App from './App.vue'
 import router from './router'
 
 import vueQueryOption from '@/plugins/tanstack-query'
 import '@/plugins/arcgis'
+import '@/plugins/element-plus'
 
 const app = createApp(App)
 // 开启性能调试
@@ -17,5 +19,6 @@ app.config.performance = true
 app.use(router)
 app.use(createPinia())
 app.use(VueQueryPlugin, vueQueryOption)
+// app.use(ElementPlus, elementPlusOption)
 
 app.mount('#app')
