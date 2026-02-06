@@ -143,6 +143,18 @@ src/
 - 优先使用 Tailwind CSS 原子化类
 - 自动 px 转 rem（最小 2px）
 
+### 自定义 Utilities (src/assets/main.css)
+
+项目中定义了以下自定义布局工具类：
+
+- `hstack` - 水平布局：`flex items-center`
+- `vstack` - 垂直布局：`flex flex-col items-center`
+- `center` - 居中布局：`flex items-center justify-center`
+
+### 响应式字体
+
+根元素使用响应式字体大小：`clamp(12px, calc(100vw / 120), 24px)`
+
 ### 提交规范
 
 遵循 Conventional Commits：
