@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 项目概述
 
-这是一个支持旧版浏览器的 Vue 3 模板项目，使用 Vite + TypeScript 构建。项目采用 Composition API 和 `<script setup>` 语法。
+这是一个支持现代浏览器的 Vue 3 模板项目，使用 Vite + TypeScript 构建。项目采用 Composition API 和 `<script setup>` 语法。
 
 **Node.js 版本要求**: `^20.19.0 || >=22.12.0`
 
@@ -65,22 +65,18 @@ npm run format
 
 ### 构建系统
 
-- **Vite 7.2** - 构建工具
+- **Vite 7.3** - 构建工具
   - 路径别名: `@` → `./src`
-  - Legacy 插件已配置但当前禁用（polyfills: false）
   - Bundle 分析器: `vite-bundle-analyzer`
-
-### UI 组件库
-
-- **Element Plus 2.13** - Vue 3 组件库
-  - 使用 `unplugin-element-plus` 自动导入样式
-  - 配置文件: `src/plugins/element-plus.ts`
 
 ### 样式方案
 
+- **Tailwind CSS v4** - 原子化 CSS 框架
+  - 使用 PostCSS 插件: `@tailwindcss/postcss`
+  - 通过 `@import 'tailwindcss'` 引入
+  - Prettier 集成: `prettier-plugin-tailwindcss` 类名排序
 - **PostCSS**
-  - `postcss-pxtorem`: px 转 rem（rootValue: 16）
-  - `postcss-preset-env`: 现代特性支持（含嵌套规则）
+  - `postcss-pxtorem`: px 转 rem（rootValue: 16，最小 2px）
 
 ### 代码质量
 
@@ -95,7 +91,6 @@ npm run format
 
 - **@arcgis/core** - 3D 地图组件（运行 `npm run copy:arcgis-assets` 复制资源）
 - **@vueuse/core** - Composition API 工具集
-- **element-plus** - UI 组件库（通过 unplugin-element-plus 自动按需导入组件样式）
 - **lodash-es** - 工具函数库
 
 ## 项目结构
@@ -105,7 +100,6 @@ src/
 ├── plugins/           # Vue 插件配置
 │   ├── fetch/        # HTTP 客户端设置
 │   ├── tanstack-query.ts
-│   ├── element-plus.ts
 │   └── arcgis.ts
 ├── router/           # Vue Router 配置
 ├── stores/           # Pinia stores
@@ -146,9 +140,8 @@ src/
 
 ### 样式
 
-- 优先使用 Element Plus 组件
+- 优先使用 Tailwind CSS 原子化类
 - 自动 px 转 rem（最小 2px）
-- 组件 scoped CSS 优先
 
 ### 提交规范
 
@@ -159,14 +152,6 @@ src/
 - `refactor:` 重构
 - `build:` 构建
 - 等...
-
-### Legacy 支持
-
-项目已配置 `@vitejs/plugin-legacy` 但当前禁用。如需启用：
-
-1. 在 `vite.config.ts` 中配置 `polyfills` / `modernPolyfills`
-2. 设置 `modernTargets` / `targets`
-3. 启用 `renderLegacyChunks`
 
 ## Lint 配置说明
 

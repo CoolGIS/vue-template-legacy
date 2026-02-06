@@ -2,7 +2,7 @@
 
 ## 项目目的
 
-这是一个支持旧版浏览器的 Vue 3 模板项目，使用 Vite + TypeScript 构建。项目作为启动模板，已配置最佳实践，适合作为新项目的基础。
+这是一个支持现代浏览器的 Vue 3 模板项目，使用 Vite + TypeScript 构建。项目作为启动模板，已配置最佳实践，适合作为新项目的基础。
 
 ## 技术栈
 
@@ -15,8 +15,8 @@
 
 ### 构建工具
 
-- **Vite 7.2** - 构建工具
-- **PostCSS** - 样式处理（pxtorem, preset-env）
+- **Vite 7.3** - 构建工具
+- **PostCSS** - 样式处理（@tailwindcss/postcss, pxtorem）
 
 ### HTTP 与数据获取
 
@@ -26,8 +26,8 @@
 
 ### UI 与样式
 
-- **Element Plus 2.13** - Vue 3 UI 组件库（通过 unplugin-element-plus 自动按需导入组件样式）
-- **postcss-pxtorem** - 响应式 px 转 rem
+- **Tailwind CSS v4** - 原子化 CSS 框架（通过 @tailwindcss/postcss 集成）
+- **postcss-pxtorem** - 响应式 px 转 rem（rootValue: 16）
 
 ### 开发工具
 
@@ -41,7 +41,6 @@
 
 - **@arcgis/core** - 2D/3D 地图组件
 - **@vueuse/core** - Composition API 工具集
-- **element-plus** - UI 组件库
 - **lodash-es** - 工具函数库
 
 ## Node.js 版本要求

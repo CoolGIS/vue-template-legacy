@@ -15,7 +15,6 @@ src/
 ├── plugins/           # Vue 插件配置
 │   ├── fetch/        # HTTP 客户端
 │   ├── tanstack-query.ts
-│   ├── element-plus.ts
 │   └── arcgis.ts
 ├── router/           # 路由配置
 ├── stores/           # Pinia stores
@@ -61,9 +60,8 @@ src/
 
 ## 样式约定
 
-- 优先使用 Element Plus 组件
+- 优先使用 Tailwind CSS v4 原子化类
 - 自动 px 转 rem（rootValue: 16, minPixelValue: 2）
-- 组件 scoped CSS 优先
 
 ## Git 提交规范
 
@@ -75,15 +73,6 @@ src/
 - `build:` 构建相关
 - `chore:` 杂项
 - `docs:` 文档
-
-## Legacy 支持
-
-项目已配置 `@vitejs/plugin-legacy` 但当前禁用。
-如需启用，需在 `vite.config.ts` 中配置：
-
-- `polyfills` / `modernPolyfills`
-- `modernTargets` / `targets`
-- `renderLegacyChunks`
 
 ## Lint 配置
 
