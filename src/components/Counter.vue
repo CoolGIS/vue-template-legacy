@@ -2,6 +2,7 @@
 import { storeToRefs } from 'pinia'
 import { useCounterStore } from '@/stores/counter'
 import Fade from '@/components/_transition/Fade.vue'
+import { Button } from '@/components/ui/button'
 
 const counter = useCounterStore()
 const { count } = storeToRefs(counter)
@@ -10,11 +11,11 @@ const { inc } = counter
 
 <template>
   <div class="center h-[30vh]">
-    <button class="h-10 w-32 rounded-full bg-blue-500 text-white" @click="inc()">
-      count is:&nbsp;
+    <Button class="h-10 w-32 rounded-full" @click="inc()">
+      count is:
       <Fade mode="out-in">
         <span :key="count">{{ count }}</span>
       </Fade>
-    </button>
+    </Button>
   </div>
 </template>

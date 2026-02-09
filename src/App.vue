@@ -2,18 +2,21 @@
 import { RouterLink, RouterView } from 'vue-router'
 import Counter from '@/components/Counter.vue'
 import Zoom from '@/components/_transition/Zoom.vue'
+import { Button } from '@/components/ui/button'
+import { Separator } from '@/components/ui/separator'
 </script>
 
 <template>
   <Counter />
-  <ul class="center m-2.5 gap-2.5 rounded-md border border-gray-300 bg-white p-2.5">
-    <li>
+  <nav class="center border-border bg-card m-2.5 h-12 gap-2.5 rounded-md border p-2.5">
+    <Button variant="ghost" as-child>
       <RouterLink to="/">主页</RouterLink>
-    </li>
-    <li>
+    </Button>
+    <Separator orientation="vertical" />
+    <Button variant="ghost" as-child>
       <RouterLink to="/about">关于</RouterLink>
-    </li>
-  </ul>
+    </Button>
+  </nav>
   <div class="overflow-hidden">
     <RouterView v-slot="{ Component }">
       <Zoom direction="left" mode="out-in">
