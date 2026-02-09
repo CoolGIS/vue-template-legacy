@@ -44,8 +44,18 @@ npm run prepare
 # 安装 Husky Git 钩子
 npm run husky:install
 
-# 复制 Geoscene 资源文件
-npm run copy:geoscene-assets
+# 复制 ArcGIS 资源文件
+npm run copy:arcgis-assets
+```
+
+## Shadcn Vue 命令
+
+```bash
+# 添加 Shadcn Vue UI 组件
+npx shadcn-vue@latest add [component-name]
+
+# 示例：添加 Button 组件
+npx shadcn-vue@latest add button
 ```
 
 ## Linux 系统工具

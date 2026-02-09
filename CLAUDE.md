@@ -69,6 +69,12 @@ npm run format
   - 路径别名: `@` → `./src`
   - Bundle 分析器: `vite-bundle-analyzer`
 
+### 配置文件
+
+- **components.json** - Shadcn Vue 配置
+  - 定义组件、工具函数、composables 的路径别名
+  - 配置 Tailwind CSS 集成和图标库
+
 ### 样式方案
 
 - **Tailwind CSS v4** - 原子化 CSS 框架
@@ -77,6 +83,12 @@ npm run format
   - Prettier 集成: `prettier-plugin-tailwindcss` 类名排序
 - **PostCSS**
   - `postcss-pxtorem`: px 转 rem（rootValue: 16，最小 2px）
+- **Shadcn Vue** - 高质量可复用 UI 组件库
+  - 风格: new-york
+  - 图标库: lucide-vue-next
+  - 使用 `reka-ui` 作为无样式组件基础
+  - CSS 变量主题系统（支持亮/暗模式切换）
+- **tw-animate-css** - Tailwind 预设动画扩展
 
 ### 代码质量
 
@@ -92,6 +104,11 @@ npm run format
 - **@arcgis/core** - 3D 地图组件（运行 `npm run copy:arcgis-assets` 复制资源）
 - **@vueuse/core** - Composition API 工具集
 - **lodash-es** - 工具函数库
+- **reka-ui** - 无样式 Vue 组件原语（Shadcn Vue 底层依赖）
+- **lucide-vue-next** - 图标库（Shadcn Vue 默认图标库）
+- **class-variance-authority** - 样式变体工具（CVA）
+- **clsx** - 条件类名工具
+- **tailwind-merge** - Tailwind 类名智能合并
 
 ## 项目结构
 
@@ -104,10 +121,13 @@ src/
 ├── router/           # Vue Router 配置
 ├── stores/           # Pinia stores
 ├── composables/      # 组合式函数
+├── lib/              # 工具库
+│   └── utils.ts      # cn() 类名合并函数
 ├── components/
 │   ├── _base/        # 基础组件 (BaseLoadingIndicator, BaseErrorBlock)
 │   ├── _transition/  # 过渡组件 (Fade, Zoom)
-│   └── _transition/group/  # 组过渡
+│   ├── _transition/group/  # 组过渡
+│   └── ui/           # Shadcn Vue UI 组件
 ├── views/            # 路由页面组件
 ├── assets/           # 静态资源
 ├── apis/             # API 相关
@@ -150,6 +170,34 @@ src/
 - `hstack` - 水平布局：`flex items-center`
 - `vstack` - 垂直布局：`flex flex-col items-center`
 - `center` - 居中布局：`flex items-center justify-center`
+
+### Shadcn Vue 工具函数
+
+`src/lib/utils.ts` 提供了 `cn()` 函数，用于智能合并 Tailwind CSS 类名：
+
+```ts
+import { cn } from '@/lib'
+
+cn('px-2 py-1', 'px-4') // 自动去重: 'py-1 px-4'
+cn('base-class', isActive && 'active-class') // 支持条件类名
+```
+
+该函数结合 `clsx`（条件类名）和 `tailwind-merge`（智能去重），是 Shadcn Vue 组件的核心工具。
+
+### Shadcn Vue 组件
+
+项目集成了 Shadcn Vue 组件库，提供高质量的可复用 UI 组件：
+
+- 组件位于 `src/components/ui/` 目录
+- 通过 `components.json` 配置（new-york 风格）
+- 使用 `lucide-vue-next` 图标库
+- CSS 变量驱动的主题系统（支持 `.dark` 类切换暗色模式）
+
+添加新组件：
+
+```bash
+npx shadcn-vue@latest add [component-name]
+```
 
 ### 响应式字体
 

@@ -19,9 +19,13 @@ src/
 ├── router/           # 路由配置
 ├── stores/           # Pinia stores
 ├── composables/      # 组合式函数
+├── lib/              # 工具库
+│   └── utils.ts      # cn() 类名合并函数
 ├── components/
 │   ├── _base/        # 基础组件
-│   └── _transition/  # 过渡组件
+│   ├── _transition/  # 过渡组件
+│   ├── _transition/group/  # 组过渡
+│   └── ui/           # Shadcn Vue UI 组件
 ├── views/            # 路由页面
 ├── assets/           # 静态资源
 ├── apis/             # API 定义
@@ -32,6 +36,8 @@ src/
 
 - `_base/` - 基础通用组件（BaseLoadingIndicator, BaseErrorBlock）
 - `_transition/` - 过渡动画组件（Fade, Zoom）
+- `_transition/group/` - 组过渡组件
+- `ui/` - Shadcn Vue UI 组件（通过 CLI 添加）
 - 其他 - 功能组件
 
 ## HTTP 请求约定
@@ -74,6 +80,34 @@ src/
 ### 响应式字体
 
 根元素使用响应式字体大小：`clamp(12px, calc(100vw / 120), 24px)`
+
+## Shadcn Vue 集成
+
+### 工具函数 (src/lib/utils.ts)
+
+`cn()` 函数用于智能合并 Tailwind CSS 类名：
+
+```ts
+import { cn } from '@/lib'
+
+cn('px-2 py-1', 'px-4') // 自动去重: 'py-1 px-4'
+cn('base-class', isActive && 'active-class') // 支持条件类名
+```
+
+该函数结合 `clsx`（条件类名）和 `tailwind-merge`（智能去重），是 Shadcn Vue 组件的核心工具。
+
+### UI 组件
+
+- 组件位于 `src/components/ui/` 目录
+- 通过 `components.json` 配置（new-york 风格）
+- 使用 `lucide-vue-next` 图标库
+- CSS 变量驱动的主题系统（支持 `.dark` 类切换暗色模式）
+
+添加新组件：
+
+```bash
+npx shadcn-vue@latest add [component-name]
+```
 
 ## Git 提交规范
 
