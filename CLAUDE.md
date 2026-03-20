@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 项目概述
 
-这是一个支持旧版浏览器的 Vue 3 模板项目，使用 Vite + TypeScript 构建。项目采用 Composition API 和 `<script setup>` 语法。
+这是一个支持旧版浏览器的 Vue 3 模板项目，使用 Vite + TypeScript 构建。
 
 **Node.js 版本要求**: `^20.19.0 || >=22.12.0`
 
@@ -29,12 +29,6 @@ npm run type-check
 # 代码检查（运行 oxlint 和 ESLint）
 npm run lint
 
-# 单独运行 oxlint（快速）
-npm run lint:oxlint
-
-# 单独运行 ESLint
-npm run lint:eslint
-
 # 代码格式化
 npm run format
 ```
@@ -45,12 +39,10 @@ npm run format
 
 - **Vue 3.5** - 仅使用 Composition API（已禁用 Options API: `__VUE_OPTIONS_API__: false`）
 - **Vue Router 5** - 使用 Hash 模式 (`createWebHashHistory`)
-- **Pinia 3** - 状态管理，推荐与 VueUse composables 结合使用
+- **Pinia 3** - 状态管理
 - **TypeScript 5.9** - 分离配置（tsconfig.app.json / tsconfig.node.json）
 
 ### HTTP 客户端与数据获取
-
-项目采用 HTTP 客户端架构：
 
 1. **ky** (`src/plugins/fetch/ky.ts`) - 基础 HTTP 客户端
    - 自动添加 Bearer Token（受保护路径）
@@ -68,7 +60,6 @@ npm run format
 - **Vite 7.2** - 构建工具
   - 路径别名: `@` → `./src`
   - Legacy 插件已配置但当前禁用（polyfills: false）
-  - Bundle 分析器: `vite-bundle-analyzer`
 
 ### UI 组件库
 
@@ -136,7 +127,6 @@ src/
 ### 状态管理
 
 - Pinia stores 使用 setup 语法模式
-- 优先复用 VueUse composables（如 `useCounter`）
 
 ### HTTP 请求
 
@@ -167,22 +157,3 @@ src/
 1. 在 `vite.config.ts` 中配置 `polyfills` / `modernPolyfills`
 2. 设置 `modernTargets` / `targets`
 3. 启用 `renderLegacyChunks`
-
-## Lint 配置说明
-
-ESLint 配置使用 ESLint 9 Flat Config，包含：
-
-- Vue essential 规则
-- TypeScript 推荐规则
-- oxlint 推荐规则
-- 跳过格式化规则（使用 `eslint-config-prettier/flat`）
-
-忽略路径：
-
-- `dist`, `dist-ssr`, `coverage`
-- `public/arcgis/**`（第三方资源）
-
-oxlint 配置文件：`.oxlintrc.json`
-
-- 插件: eslint, typescript, unicorn, oxc, vue
-- 类别: correctness (error级别)
