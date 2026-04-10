@@ -10,7 +10,7 @@ const {
   mask = true,
   fullscreen = false
 } = defineProps<{
-  error: Error | null
+  error: ZodError | HTTPError | APIError | Error | null
   onRetry?: () => void
   mask?: boolean
   fullscreen?: boolean
