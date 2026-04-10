@@ -23,6 +23,12 @@ npm run build-only
 # 预览生产构建
 npm run preview
 
+# 单元测试
+npm run test:unit
+
+# E2E 测试
+npm run test:e2e
+
 # TypeScript 类型检查
 npm run type-check
 
@@ -73,6 +79,18 @@ npm run format
   - `postcss-pxtorem`: px 转 rem（rootValue: 16）
   - `postcss-preset-env`: 现代特性支持（含嵌套规则）
 
+### 测试框架
+
+- **Vitest** - 单元及组件测试框架
+  - 配置文件: `vitest.config.ts`
+  - 测试文件位置: `src/**/__tests__/*.spec.ts`
+  - 运行命令: `npm run test:unit`
+
+- **Playwright** - E2E 测试框架
+  - 配置文件: `playwright.config.ts`
+  - 测试文件位置: `e2e/*.spec.ts`
+  - 运行命令: `npm run test:e2e`
+
 ### 代码质量
 
 - **双 Linter 架构**:
@@ -109,6 +127,10 @@ src/
 ├── assets/           # 静态资源
 ├── apis/             # API 相关
 └── utils/            # 工具函数
+
+e2e/                  # E2E 测试 (Playwright)
+├── vue.spec.ts       # E2E 测试示例
+└── tsconfig.json     # E2E TypeScript 配置
 ```
 
 ## 重要约定
